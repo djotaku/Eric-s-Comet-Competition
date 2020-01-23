@@ -20,11 +20,21 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Rotate();
     }
 
     private void Move()
     {
         var forwardMovement = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+        var deltaX = Mathf.Sign(transform.rotation.z) * forwardMovement;
+        var deltaY = Mathf.Cos(transform.rotation.z) * forwardMovement;
+        var newXPos = transform.position.x + deltaX;
+        var newYPos = transform.position.y + deltaY;
+        transform.position = new Vector2(newXPos, newYPos);
+    }
+
+    private void Rotate()
+    {
         var rotationMovement = Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed;
         transform.Rotate(0, 0, -rotationMovement, Space.Self);
     }
