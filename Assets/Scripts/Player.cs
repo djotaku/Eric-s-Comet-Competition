@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float rotationSpeed = 100f;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +25,8 @@ public class Player : MonoBehaviour
     private void Move()
     {
         var forwardMovement = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        var deltaX = Mathf.Sin(transform.rotation.z * Mathf.Deg2Rad) * forwardMovement;
-        Debug.Log("transform.rot.z = " + transform.rotation.z);
-        Debug.Log("deltaX = " + deltaX);
-        var deltaY = Mathf.Cos(transform.rotation.z * Mathf.Deg2Rad) * forwardMovement;
+        var deltaX = -Mathf.Sin(transform.rotation.eulerAngles.z * Mathf.Deg2Rad) * forwardMovement;
+        var deltaY = Mathf.Cos(transform.rotation.eulerAngles.z * Mathf.Deg2Rad) * forwardMovement;
         var newXPos = transform.position.x + deltaX;
         var newYPos = transform.position.y + deltaY;
         transform.position = new Vector2(newXPos, newYPos);
