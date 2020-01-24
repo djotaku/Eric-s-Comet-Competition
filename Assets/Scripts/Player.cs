@@ -26,8 +26,10 @@ public class Player : MonoBehaviour
     private void Move()
     {
         var forwardMovement = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-        var deltaX = Mathf.Sign(transform.rotation.z) * forwardMovement;
-        var deltaY = Mathf.Cos(transform.rotation.z) * forwardMovement;
+        var deltaX = Mathf.Sin(transform.rotation.z * Mathf.Deg2Rad) * forwardMovement;
+        Debug.Log("transform.rot.z = " + transform.rotation.z);
+        Debug.Log("deltaX = " + deltaX);
+        var deltaY = Mathf.Cos(transform.rotation.z * Mathf.Deg2Rad) * forwardMovement;
         var newXPos = transform.position.x + deltaX;
         var newYPos = transform.position.y + deltaY;
         transform.position = new Vector2(newXPos, newYPos);
