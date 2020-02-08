@@ -2,7 +2,7 @@ Eric's Comet Competition
 
 A clone of a shareware game that brought me lots of joy as a child.
 
-![Screenshot](https://github.com/djotaku/Eric-s-Comet-Competition/blob/master/Assets/Screenshots/Comet%20Screenshot%201.png)
+![Screenshot](https://github.com/djotaku/Eric-s-Comet-Competition/raw/master/Assets/Screenshots/Comet%20Screenshot%201.png)
 
 # Description of the Game I intend to build
 
