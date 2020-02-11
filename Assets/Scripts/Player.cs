@@ -37,4 +37,9 @@ public class Player : MonoBehaviour
         var rotationMovement = Input.GetAxis("Horizontal") * Time.deltaTime * rotationSpeed;
         transform.Rotate(0, 0, -rotationMovement, Space.Self);
     }
+
+    public void SetLocation(Vector2 newPos)
+    {
+        transform.position = newPos;
+    }
 }
