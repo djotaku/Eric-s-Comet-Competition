@@ -40,6 +40,14 @@ public class Player : MonoBehaviour
 
     public void SetLocation(Vector2 newPos)
     {
-        transform.position = newPos;
+        if (newPos.x == 0)
+        {
+            transform.position = new Vector2 (transform.position.x, newPos.y);
+        }
+        else if (newPos.y == 0)
+        {
+            transform.position = new Vector2(newPos.x, transform.position.y);
+        }
+        
     }
 }
