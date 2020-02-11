@@ -18,4 +18,4 @@ Also, if you reach any edge of the map you reappear at the opposite side.
 
 ### Latest progress video:
 
-https://youtu.be/-vMEkXp3iFg
+https://youtu.be/YM7191O4v1c
